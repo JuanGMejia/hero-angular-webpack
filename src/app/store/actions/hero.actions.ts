@@ -13,7 +13,7 @@ export class GetHeroes implements Action {
 export class GetHeroesSuccess implements Action {
     readonly type = HeroActionTypes.getHeroesSuccess;
 
-    constructor( public payload: Array<Hero>) {}
+    constructor( public payload: Hero[]) {}
 }
 
 export type HeroActions =

@@ -5,8 +5,3 @@ export interface Hero {
     "_nickname"?: string
 }
 
-export interface NavigationItem {
-    name: string;
-    state: string;
- }
-
