@@ -1,0 +1,94 @@
+@import '../../../../styles/index.scss';
+
+.card-detail {
+    @include backgroundOpacity($white, 1);
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .previous {
+        background-color: $fruit-salad;
+        color: $white;
+        position: absolute;
+        left: 30%;
+        top: 9%;
+        height: 50px;
+        border-radius: 18px;
+    }
+    .detail-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        .card-image {
+            height: 90px;
+            display: flex;
+            flex-direction: row-reverse;
+            .card-position {
+                position: relative;
+                left: -20%;
+                @include backgroundOpacity($red,0.7);
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                .position-number {
+                    color: $white;
+                    font-weight: bolder;
+                }
+            }
+            img {
+                height: 90px;
+                width: 90px;
+                border-radius: 50%;
+            }
+        }
+        .card-inputs {
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+            border: solid 1px;
+            .general-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 5px;
+                .generic-input {
+                    border-radius: 25px;
+                    margin: 10px;
+                    border-style: ridge;
+                }
+                .generic-input:focus{
+                    border-color: $goblin;
+                    outline:none;
+                }
+            }
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: $white;
+            background-color: $fruit-salad;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px $dusty-gray;
+          }
+          
+          .button:hover {background-color: $goblin}
+          
+          .button:active {
+            background-color: $goblin;
+            box-shadow: 0 5px $dove-gray;
+            transform: translateY(4px);
+          }
+    }
+    
+
+}

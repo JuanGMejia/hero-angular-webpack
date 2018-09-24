@@ -11,13 +11,15 @@ import {
 } from '../actions/hero.actions';
 import { HeroesService } from '../services/hero.service';
 import { Hero } from '../../models/heroes';
+import { MetersPipe } from '../../shared/meters.pipe';
 
 @Injectable()
 export class HeroEffects {
 
     constructor(
         private actions$: Actions,
-        private heroesService: HeroesService
+        private heroesService: HeroesService,
+        private metersPipe: MetersPipe
     ) { }
 
     @Effect()
@@ -28,6 +30,10 @@ export class HeroEffects {
                 .getHeroes()
                 .pipe(
                     map((heroes: Hero[]) => {
+                        heroes.forEach((hero: Hero) => {
+                            hero._height = +this.metersPipe.transform(hero._height);
+                        });
+                        
                         return new GetHeroesSuccess(heroes);
                     })
                 );

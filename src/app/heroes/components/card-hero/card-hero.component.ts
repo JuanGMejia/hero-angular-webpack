@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../../../models/heroes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-hero',
@@ -8,9 +9,16 @@ import { Hero } from '../../../models/heroes';
 })
 export class CardHeroComponent implements OnInit {
   @Input() hero: Hero;
+  @Input() index: number;
   
-  constructor() {}
+  constructor(
+    private router: Router,
+  ) {}
 
   ngOnInit() {
+  }
+
+  goDetails(){
+    this.router.navigate(['heroes', this.index]);
   }
 }

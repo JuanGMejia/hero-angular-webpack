@@ -7,6 +7,8 @@ import { HeroesModule } from './heroes/heroes.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppStoreModule } from './store/app-store.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 export const metaReducers: MetaReducer<any>[] = [];
 
@@ -17,6 +19,8 @@ export const metaReducers: MetaReducer<any>[] = [];
     HeroesModule,
     AppRoutingModule,
     AppStoreModule,
+    BrowserAnimationsModule,
+    FormsModule,
     StoreModule.forRoot({}, { metaReducers }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({})

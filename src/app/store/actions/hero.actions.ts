@@ -3,7 +3,9 @@ import { Hero } from '../../models/heroes';
 
 export enum HeroActionTypes {
     getHeroes = '[Heroes] Get heroes',
-    getHeroesSuccess = '[Heroes] Get heroes success'
+    getHeroesSuccess = '[Heroes] Get heroes success',
+    getHeroByIndex = '[Heroes] Get hero by index',
+    updateHero = '[Heroes] Update hero',
 }
 
 export class GetHeroes implements Action {
@@ -16,6 +18,20 @@ export class GetHeroesSuccess implements Action {
     constructor( public payload: Hero[]) {}
 }
 
+export class GetHeroByIndex implements Action {
+    readonly type = HeroActionTypes.getHeroByIndex;
+
+    constructor( public payload: number) {}
+}
+
+export class UpdateHero implements Action {
+    readonly type = HeroActionTypes.updateHero;
+
+    constructor( public payload: {hero: Hero, index: number}) {}
+}
+
 export type HeroActions =
 | GetHeroes 
-| GetHeroesSuccess;
+| GetHeroesSuccess
+| GetHeroByIndex
+| UpdateHero;

@@ -4,16 +4,28 @@ import { Hero } from '../../models/heroes';
 
 export interface HeroState {
     heroes: Hero[];
+    heroActive: Hero;
 }
 
 export const initialState: HeroState = {
-    heroes: []
+    heroes: [],
+    heroActive: {}
 };
 
 export function reducer(state: HeroState = initialState, action: HeroActions): HeroState {
     switch (action.type) {
         case HeroActionTypes.getHeroesSuccess:
-            state.heroes = action.payload;
+            if(state.heroes.length === 0) {
+                state.heroes = action.payload;
+            }
+            return _.cloneDeep(state);
+        
+        case HeroActionTypes.getHeroByIndex:
+            state.heroActive = state.heroes[action.payload]
+            return _.cloneDeep(state);
+        
+        case HeroActionTypes.updateHero:
+            state.heroes[action.payload.index] = action.payload.hero;
             return _.cloneDeep(state);
 
         default:

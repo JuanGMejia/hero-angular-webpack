@@ -16,10 +16,15 @@ const getAllHeroes = createSelector(
   (state: HeroState) => state.heroes
 );
 
+const getActiveHero = createSelector(
+  getHeroState,
+  (state: HeroState) => state.heroActive
+);
+
 @Injectable()
 export class HeroSelectors {
   constructor(private store: Store<EntityState>) {}
-  // selectors$
   heroes$ = this.store.select(getAllHeroes);
   heroState$ = this.store.select(getHeroState);
+  heroActive$ = this.store.select(getActiveHero);
 }

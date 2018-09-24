@@ -7,7 +7,6 @@ export class HeroesService {
   constructor(private http: HttpClient) { }
 
   getHeroes() {
-    console.log("call service")
     return this.http.get('https://udem.herokuapp.com/heroes');
   }
 }

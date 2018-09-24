@@ -1,0 +1,3 @@
+@mixin backgroundOpacity($color, $opacity) {
+    background-color: rgba($color: $color, $alpha: $opacity)
+}

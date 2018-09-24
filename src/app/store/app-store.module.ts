@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
 import { effects } from './effects';
 import { services } from './';
+import { MetersPipe } from '../shared/meters.pipe';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import { services } from './';
     StoreModule.forFeature('entityCache', reducers),
     EffectsModule.forFeature(effects)
   ],
-  providers: [...services],
+  providers: [...services, MetersPipe],
   declarations: [],
   exports: [StoreModule, EffectsModule]
 })

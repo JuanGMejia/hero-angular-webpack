@@ -4,4 +4,3 @@ export interface Hero {
     "_picture"?: string,
     "_nickname"?: string
 }
-
