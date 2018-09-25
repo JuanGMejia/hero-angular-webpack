@@ -1,0 +1,21 @@
+<div class="card-container" (click)="goDetails()">
+    <div class="card-image">
+        <div class="card-position">
+            <span class="position-number">
+                {{index | ordinal}}
+            </span>
+        </div>
+        <img src="{{hero._picture}}">
+    </div>
+    <div class="card-description">
+        <div class="card-nickname">
+            {{hero._nickname}}
+        </div>
+        <div class="card-name">
+            {{hero._name}}
+        </div>
+        <div class="card-height">
+            Estatura: {{hero._height }}mt
+        </div>
+    </div>
+</div>

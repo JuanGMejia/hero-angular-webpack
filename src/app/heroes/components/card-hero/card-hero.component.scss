@@ -1,0 +1,49 @@
+@import '../../../../styles/index.scss';
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    
+    .card-image {
+        height: 90px;
+        width: 50%;
+        display: flex;
+        flex-direction: row-reverse;
+        .card-position {
+            position: relative;
+            left: -20%;
+            @include backgroundOpacity($red,0.7);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            .position-number {
+                color: $white;
+                font-weight: bolder;
+            }
+        }
+        img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+        }
+    }
+    .card-description{
+        .card-nickname{
+            color: $red;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .card-name {
+            color: $rolling-stone;
+        }
+        .card-height {
+            color: $rolling-stone;
+        }
+    }
+}

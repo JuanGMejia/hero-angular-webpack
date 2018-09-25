@@ -1,0 +1,16 @@
+@import '../../../../styles/index.scss';
+
+.list-container {
+    @include backgroundOpacity($white,0.7);
+    border-radius: 25px;
+    margin: 5% 4%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .card-list-container{
+        width: 280px;
+        margin: 10px;
+        @include backgroundOpacity($white,1);
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="card-detail">
+    <button class="previous" (click)="goBack()">Go back</button>
+    <h1> DETAIL HERO</h1>
+    <div class="detail-form">
+        <div class="card-image">
+            <div class="card-position">
+                <span class="position-number">
+                    {{index | ordinal}}
+                </span>
+            </div>
+            <img src="{{hero._picture}}">
+        </div>
+        <div class="card-inputs">
+            <div class="general-container">
+                <label>Nick Name</label>
+                <input class="generic-input" [(ngModel)]="hero._nickname">
+            </div>
+            <div class="general-container">
+                <label>Name</label>
+                <input class="generic-input" [(ngModel)]="hero._name">
+            </div>
+            <div class="general-container">
+                <label>Height</label>
+                <input class="generic-input" [(ngModel)]="hero._height">
+            </div>
+        </div>
+        <button class="button" (click)="saveHero()">Save Hero</button>
+    </div>
+</div>
