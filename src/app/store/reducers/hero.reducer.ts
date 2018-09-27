@@ -5,11 +5,13 @@ import { Hero } from '../../models/heroes';
 export interface HeroState {
     heroes: Hero[];
     heroActive: Hero;
+    showLoading: boolean;
 }
 
 export const initialState: HeroState = {
     heroes: [],
-    heroActive: {}
+    heroActive: {},
+    showLoading: false
 };
 
 export function reducer(state: HeroState = initialState, action: HeroActions): HeroState {
@@ -28,6 +30,10 @@ export function reducer(state: HeroState = initialState, action: HeroActions): H
             state.heroes[action.payload.index] = action.payload.hero;
             return _.cloneDeep(state);
 
+        case HeroActionTypes.setShowLoading:
+            state.showLoading = action.payload;
+            return _.cloneDeep(state);
+
         default:
             return _.cloneDeep(state);
     }
@@ -35,4 +41,4 @@ export function reducer(state: HeroState = initialState, action: HeroActions): H
 
 export const getState = (state: HeroState) => state;
 export const getHeroes = (state: HeroState) => state.heroes;
-
+export const getShowLoading = (state) => state.entityCache.heroes.showLoading;
