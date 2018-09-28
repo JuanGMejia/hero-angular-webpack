@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("on init HOME")
     this.heroDispatchers.getHeroes();
   }
 }

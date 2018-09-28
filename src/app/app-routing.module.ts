@@ -7,7 +7,16 @@ const routes: Routes = [
     path: 'heroes',
     loadChildren: 'app/heroes/heroes.module#HeroesModule'
   },
-  { path: '**', redirectTo: 'heroes'}
+  {
+    path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { 
+  path: '**', 
+  redirectTo: '/heroes',
+  pathMatch: 'full'
+  }
 ];
 
 @NgModule({

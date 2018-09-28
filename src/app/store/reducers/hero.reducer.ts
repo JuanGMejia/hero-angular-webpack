@@ -35,4 +35,5 @@ export function reducer(state: HeroState = initialState, action: HeroActions): H
 
 export const getState = (state: HeroState) => state;
 export const getHeroes = (state: HeroState) => state.heroes;
+export const getHeroesState = (state) => state.entityCache.heroes.heroes;
 
