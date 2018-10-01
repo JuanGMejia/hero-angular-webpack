@@ -6,6 +6,7 @@ export enum HeroActionTypes {
     getHeroesSuccess = '[Heroes] Get heroes success',
     getHeroByIndex = '[Heroes] Get hero by index',
     updateHero = '[Heroes] Update hero',
+    setShowLoading = '[Layout] set showLoading',
 }
 
 export class GetHeroes implements Action {
@@ -30,8 +31,15 @@ export class UpdateHero implements Action {
     constructor( public payload: {hero: Hero, index: number}) {}
 }
 
+export class SetShowLoading implements Action {
+    readonly type = HeroActionTypes.setShowLoading;
+  
+    constructor(public payload: boolean) {}
+  }
+
 export type HeroActions =
 | GetHeroes 
 | GetHeroesSuccess
 | GetHeroByIndex
-| UpdateHero;
+| UpdateHero
+| SetShowLoading;

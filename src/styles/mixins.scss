@@ -1,3 +1,13 @@
 @mixin backgroundOpacity($color, $opacity) {
     background-color: rgba($color: $color, $alpha: $opacity)
 }
+
+// flexbox
+@mixin flex($direction, $alignContent, $alignItems, $justifyContent, $flexWrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-content: $alignContent;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    flex-wrap: $flexWrap;
+}
